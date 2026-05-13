@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakaf Asrama Putri - Ma'had At-Tauhid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #065f46;
+            --primary-light: #10b981;
+            --accent: #fbbf24;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-soft: #f9fafb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main); background: white; line-height: 1.6; }
+/* NAVBAR SECTION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--navbar-bg);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo img {
+            height: 40px; /* Sesuaikan tinggi logo Anda */
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* CARD PROGRESS */
+        .donation-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .amount-big { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .target-small { font-size: 0.9rem; color: var(--text-muted); }
+
+        .progress-track {
+            background: #e5e7eb;
+            height: 16px;
+            border-radius: 50px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            height: 100%;
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
+        }
+
+        /* GALLERY SECTION (6 CARDS WITH DESCRIPTION) */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+        
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .gallery-item:hover { transform: translateY(-10px); }
+
+        .gallery-img-container { height: 200px; overflow: hidden; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-text { padding: 15px; }
+        .gallery-text h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary); }
+        .gallery-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        /* PAYMENT SECTION WITH SHADOW & COPY BUTTON */
+        .payment-box {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 60px;
+            /* Efek Bayangan Kuat */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .bank-card {
+            background: var(--bg-soft);
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bank-info { flex-grow: 1; }
+        .bank-name { font-weight: 700; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
+        .acc-number { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 5px 0; }
+
+        .btn-copy {
+            background: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .btn-copy:hover { background: var(--primary); }
+
+        .qris-box { text-align: center; background: var(--bg-soft); padding: 20px; border-radius: 16px; }
+        .qris-box img { width: 180px; border: 1px solid #ddd; border-radius: 8px; background: white; padding: 10px; }
+
+        .btn-main {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover { opacity: 0.9; transform: translateY(-3px); }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .payment-grid { grid-template-columns: 1fr; }
+            .hero { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+<!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <!-- GANTI URL SRC DENGAN LOGO ANDA -->
+                <img src="logo.jpeg" alt="Logo Ma'had At-Tauhid">
+                <span>Ma'had At-Tauhid</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#donasi">Progress</a></li>
+                <li><a href="#dokumentasi">Dokumentasi</a></li>
+                <li><a href="#wakaf">Wakaf</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Investasi Akhirat Anda</h1>
+            <p>Bantu wujudkan hunian yang layak bagi para santriwati penghafal Al-Qur'an di Ma'had At-Tauhid.</p>
+            <a href="#donasi" class="btn-main" style="display: inline-block; padding: 15px 40px;">Wakaf Sekarang</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="donation-card" id="donasi">
+            <div class="progress-header">
+                <div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Dana Terkumpul</p>
+                    <div class="amount-big" id="text-terkumpul">Rp 0</div>
+                </div>
+                <div class="target-small">
+                    Target: <span id="text-target">Rp 0</span>
+                </div>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-bar"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p id="text-persentase" style="font-weight: 700; color: var(--primary-light);">0%</p>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Terakhir diupdate: Real-time</p>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Dokumentasi Program</h2>
+            <p>Laporan visual progres pembangunan dan kegiatan santri</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="gallery-img-container"><img src="gambar .jpeg" alt="Lahan"></div>
+                <div class="gallery-text">
+                    <h3>Tahap Pembersihan Lahan</h3>
+                    <p>Pembersihan lahan tahap pertama untuk pondasi utama asrama.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img-container"><img src="gambar .jpeg" alt="Asrama Putri"></div>
+                <div class="gallery-text">
+                    <h3>Asrama Putri</h3>
+                    <p>Kondisi asrama putri saat ini yang akan di pindahkan ke lahan baru milik</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img-container"><img src="gambar .jpeg" alt="Santri"></div>
+                <div class="gallery-text">
+                    <h3>Kegiatan Santri</h3>
+                    <p>Para santriwati tetap semangat menghafal meski tempat terbatas.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img-container"><img src="gambar .jpeg" alt="Ruang Kelas"></div>
+                <div class="gallery-text">
+                    <h3>Ruang Kelas</h3>
+                    <p>Ruangan Kelas yang akan direnovasi karena sudah tidak layak.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img-container"><img src="gambar .jpeg" alt="Briefing"></div>
+                <div class="gallery-text">
+                    <h3>Briefing Tukang</h3>
+                    <p>Koordinasi rutin agar spesifikasi bangunan sesuai standar keamanan.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img-container"><img src="gambar .jpeg" alt="Desain"></div>
+                <div class="gallery-text">
+                    <h3>Visualisasi Akhir</h3>
+                    <p>Target penampakan asrama saat pembangunan selesai 100%.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Salurkan Wakaf Terbaik</h2>
+        </div>
+
+        <div class="payment-box">
+            <div class="payment-grid">
+                <div>
+                    <div class="bank-card">
+                        <div class="bank-info">
+                            <p class="bank-name">BSI (Bank Syariah Indonesia)</p>
+                            <p class="acc-number" id="norek1">1234567890</p>
+                            <p style="font-size: 0.8rem;">A.n Yayasan Ma'had At-Tauhid</p>
+                        </div>
+                        <button class="btn-copy" onclick="copyToClipboard('norek1')">Salin</button>
+                    </div>
+
+                    <div class="bank-card">
+                        <div class="bank-info">
+                            <p class="bank-name">Bank Muamalat</p>
+                            <p class="acc-number" id="norek2">0987654321</p>
+                            <p style="font-size: 0.8rem;">A.n Yayasan Ma'had At-Tauhid</p>
+                        </div>
+                        <button class="btn-copy" onclick="copyToClipboard('norek2')">Salin</button>
+                    </div>
+                    
+                    <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
+                        *Klik tombol salin untuk meng-copy nomor rekening secara otomatis.
+                    </p>
+                    <a href="https://wa.me/+6285158502031" class="btn-main" style="margin-top: 25px; background: #25d366;">
+                        Konfirmasi via WhatsApp
+                    </a>
+                </div>
+
+                <div class="qris-box">
+                    <p style="font-weight: 700; margin-bottom: 15px; color: var(--primary);">Scan QRIS</p>
+                    <img src="qris.jpeg" alt="QRIS">
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 15px;">Mendukung: GoPay, OVO, Dana, LinkAja & Mobile Banking</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: var(--text-muted); border-top: 1px solid #eee;">
+        <p>&copy; 2024 Ma'had At-Tauhid. Semoga menjadi amal jariyah yang tak terputus.</p>
+    </footer>
+
+    <script>
+        // Fungsi Salin Rekening
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const originalText = btn.innerText;
+                btn.innerText = "Tersalin!";
+                btn.style.background = "#059669";
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = "#10b981";
+                }, 2000);
+            });
+        }
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+        import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDaQXGJi1N_o4qulWyne1t-VBsFe5YKqCs",
+            authDomain: "donasi-727e7.firebaseapp.com",
+            projectId: "donasi-727e7",
+            storageBucket: "donasi-727e7.firebasestorage.app",
+            messagingSenderId: "1009738505362",
+            appId: "1:1009738505362:web:f0872eb9a6545583d3da4b"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const formatRupiah = (angka) => {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(angka);
+        };
+
+        const campaignRef = doc(db, "campaigns", "asrama_putri");
+
+        onSnapshot(campaignRef, (docSnap) => {
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                const terkumpul = data.terkumpul || 0;
+                const target = data.target || 1;
+                let persen = (terkumpul / target) * 100;
+                if (persen > 100) persen = 100;
+
+                document.getElementById('text-terkumpul').innerText = formatRupiah(terkumpul);
+                document.getElementById('text-target').innerText = formatRupiah(target);
+                document.getElementById('text-persentase').innerText = Math.round(persen) + "% Terkumpul";
+                document.getElementById('progress-bar').style.width = persen + "%";
+            }
+        });
+    </script>
+</body>
+</html>
