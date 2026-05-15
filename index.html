@@ -517,6 +517,32 @@
         }
     </script>
 
+      <script>
+        // Fungsi Membuka Popup Modal
+        function openModal(program) {
+            document.getElementById('programName').innerText = program;
+            
+            // Atur teks otomatis untuk chat konfirmasi WhatsApp berdasarkan tombol kartu yang diklik
+            const waNumber = "6281234567890"; // GANTI DENGAN NOMOR HP ADMIN MA'HAD
+            const waMessage = encodeURIComponent(`Bismillah, saya ingin mengonfirmasi transfer wakaf untuk program: *Wakaf ${program}* di Ma'had At-Tauhid.`);
+            document.getElementById('waConfirmBtn').href = `https://wa.me/${waNumber}?text=${waMessage}`;
+            
+            document.getElementById('paymentModal').classList.add('active');
+        }
+
+        // Fungsi Menutup Popup Modal saat klik area luar kotak putih
+        function closeModal(event) {
+            if (event.target.id === 'paymentModal') {
+                document.getElementById('paymentModal').classList.remove('active');
+            }
+        }
+
+        // Fungsi Menutup Popup melalui tombol silang (x)
+        function forceCloseModal() {
+            document.getElementById('paymentModal').classList.remove('active');
+        }
+    </script>
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
         import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
