@@ -178,6 +178,74 @@
         .gallery-text h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary); }
         .gallery-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
 
+
+         /* ========================================= */
+        /* WAQF PROGRAM CARDS (DIPERKECIL DRASTIS)   */
+        /* ========================================= */
+        .waqf-grid {
+            display: grid;
+            /* Kolom minimum diperkecil jadi 150px (sebelumnya 300px) */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px; /* Jarak antar card dirapatkan */
+            margin-bottom: 60px;
+        }
+
+        .waqf-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px; /* Padding dikurangi 50% */
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .waqf-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+            border-color: var(--primary-light);
+        }
+
+        .waqf-card-icon {
+            font-size: 1.8rem; /* Icon diperkecil */
+            margin-bottom: 10px;
+        }
+
+        .waqf-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem; /* Ukuran judul diperkecil */
+            color: var(--primary);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .waqf-card p {
+            color: var(--text-muted);
+            font-size: 0.75rem; /* Ukuran teks diperkecil */
+            margin-bottom: 15px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .btn-outline {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px; /* Tombol diperkecil */
+            border-radius: 8px;
+            font-size: 0.75rem; /* Teks tombol diperkecil */
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        /* ========================================= */
+
         /* PAYMENT SECTION WITH SHADOW & COPY BUTTON */
         .payment-box {
             background: white;
@@ -345,7 +413,45 @@
                 </div>
             </div>
         </div>
+  /* Program Waqf */
+        
+        <div class="waqf-grid">
+            <div class="waqf-card">
+                <div class="waqf-card-icon">🏢</div>
+                <h3>Asrama</h3>
+                <p>Membangun asrama yang nyaman untuk santriwati penghafal Al-Qur'an.</p>
+                <a href="#pembayaran" class="btn-outline">Wakaf</a>
+            </div>
 
+            <div class="waqf-card">
+                <div class="waqf-card-icon">🕌</div>
+                <h3>Mesjid</h3>
+                <p>Rumah Allah sebagai pusat ibadah dan kajian keagamaan.</p>
+                <a href="#pembayaran" class="btn-outline">Wakaf</a>
+            </div>
+
+            <div class="waqf-card">
+                <div class="waqf-card-icon">📚</div>
+                <h3>Ruang Belajar</h3>
+                <p>Ruang representatif menunjang pendidikan santri.</p>
+                <a href="#pembayaran" class="btn-outline">Wakaf</a>
+            </div>
+
+            <div class="waqf-card">
+                <div class="waqf-card-icon">🏡</div>
+                <h3>Hunian Guru</h3>
+                <p>Memuliakan para asatidz dengan tempat tinggal yang nyaman.</p>
+                <a href="#pembayaran" class="btn-outline">Wakaf</a>
+            </div>
+
+            <div class="waqf-card">
+                <div class="waqf-card-icon">🌱</div>
+                <h3>Dakwah</h3>
+                <p>Aset produktif untuk operasional dan pengembangan dakwah.</p>
+                <a href="#pembayaran" class="btn-outline">Wakaf</a>
+            </div>
+        </div>
+        
         <div class="section-title">
             <h2>Salurkan Wakaf Terbaik</h2>
         </div>
