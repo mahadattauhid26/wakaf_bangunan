@@ -1,0 +1,31 @@
+Buat aplikasi tampilan seperti aplikasi mobile untuk mencatat administrasi Bimbel NUN (adalah nun Hijaiyah ن) 
+
+Halaman utama: form login ( Username & katasandi). Khusus admin masuk dengan : nama lengkap: Admin, katasandi: 123456.
+
+Tombol daftar : (daftar sebagai siswa atau tentor) popup form pendaftaran siswa: Username, Sandi, nama lengkap,jenis kelamin, usia,nama ibu, nama ayah, alamat, no hp, pilihan program (pake radio button maksimal 3 pilihan) : radio button): tahsin& tahfidz, diniyah, materi pesantren modern, preschool&iqra, tahfidz&iqra, bahasa arab,desain grafis,mapel sekolah, persiapan masuk pesantren, desain grafis (minimal usia 12 tahun), Biaya SPP : (radio button) rp. 100.000 (tahsin&tahfidz, preschool & iqra, tahfidz & iqra, bahasa arab, mapel sekolah), rp. 150.000, (materi pesantren modern, persiapan masuk pesantren) rp. 200.000 (desain grafis), isi Kolom spp otomatis sesuai pilihan program (jumlahkan jika lebih dari 1 program) . Saat pilih kelas bisa pilih jadwal yg ada juga, jika belum ada jadwal bisa ditambahkan oleh admin setelah mendaftar.
+
+Form pendaftaran tentor: username, kata sandi, nama lengkap, alamat, no hp, pilihan program (radio button): tahsin& tahfidz, diniyah, materi pesantren modern, preschool&iqra, tahfidz&iqra, bahasa arab,desain grafis,mapel sekolah, persiapan masuk pesantren, desain grafis, boleh pilih maks 5. 
+
+Dashboard siswa: Foto (di sematkan lewat link di dashboard admin) Nama lengkap, No id, data diri sesuai form pendaftaran. Pengumuman dari tentor kelas dan admin, laporan hasil belajar (kelas dan jadwal kelas, nilai,absensi, catatan,pr, catatan setoran hafalan Al-Quran/ iqra, Catatan SPP)
+
+Dashboard tentor: Foto (di sematkan lewat link di dashboard admin) Nama lengkap, nomor induk, data diri sesuai form pendaftaran, data gaji bulanan (ket. Sudah dibayar atau belum). Pengumuman dari tentor untuk kelas (pilihan kelas dropdown dan pengumuman dikirim hanya kelas yg dipilih), form laporan hasil belajar per santri (nilai,tabel absensi (ceklis: hadir, izin, sakit, alpa), catatan,pr, khusus tahfidz & tahsin ada form setoran hafalan Al-Quran [surat, ayat, halaman, juz], khusus iqro ada form catatan iqro [jilid,halaman, dll]). Tabel absensi siswa perkelas (kelas tentor dan siswa ditetapkan oleh admin), absen tentor (hadir,izin,sakit) sesuai jadwal dan kelas.
+
+Dashboard admin:(bisa edit dan hapus data semuanya) Tabel data (ada search) siswa lengkap sesuai form pendaftaran, ada kolom kosong untuk link foto. Ada tombol edit (pilihan program radio button jika diubah spp otomatis ditambah dan semua data) dan hapus di sebelah tabel.
+
+Tabel data (ada search) tentor lengkap sesuai form pendaftaran, ada kolom kosong untuk link foto. (pilihan program radio button dan semua data)?
+
+Tabel data perkelas setiap program. Form Pengumuman untuk tentor dan siswa. 
+
+Form pembayaran spp siswa [nominal spp, otomatis terisi sesuai pilihan tiap siswa]. Tabel "nama siswa-keterang:lunas" jika "lunas" diklik popup kwitansi satu halaman. Fitur diskon dan gratis spp.
+
+Pengaturan tentor dan anggota kelas, data jadwal (ada search) kelas dan mengajar tentor ada tombol edit dan hapus.
+
+Keuangan: pengaturan spp bisa diubah nominalnya sesuai keperluan,pencatatan keluar masuk uang, saldo dll. Data spp yg di input bisa langsung masuk ke catatan uang masuk di keuangan. Rekap absen tentor dan siswa. Pengaturan gaji tiap tentor (berbeda) dengan persentase, jika diubah maka nominal gaji tentor berubah juga.
+
+rekap gaji tentor sesuai absensi dan persentase dari total spp setiap siswa jika tidak hadir maka dikurangi 2%. Ada tombol sudah dibayar ada masuk ke dashboard tentor berupa pengumuman bahwa gaji bulanan tersebut sudah dibayar. Pengumuman hilang setelah 10 hari. 
+
+pengaturan edit nama "Bimbel nun" dari panel admin. bisa ubah warna dari dashboard admin", sematkan logo via link dari dashboard admin). Pengaturan edit username admin dan kata sandi.
+
+Pengaturan menambah kelas (misal kelas tahfid iqra 1 dst).
+
+warna magenta, biru dan kuning.
