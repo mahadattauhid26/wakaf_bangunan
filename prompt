@@ -29,3 +29,35 @@ pengaturan edit nama "Bimbel nun" dari panel admin. bisa ubah warna dari dashboa
 Pengaturan menambah kelas (misal kelas tahfid iqra 1 dst).
 
 warna magenta, biru dan kuning.
+
+
+Override per siswa hilangkan. pengaturan harga spp perprogram bisa diubah admin.
+
+dashboard siswa, foto profile terhalang header.
+Dashboard Tentor bisa bikin jadwal dan kelas sendiri sesuai programnya. jika absen dan tidak hadir ada dropdwon guru pengganti dan mendapat fee 10000 dari potongan gaji guru tersebut masuk ke gaji guru pengganti. semua masuk ke pencatatan keuangan dan rekap gaji.
+ Siswa dan tentor bisa mengubah username dan password sendiri dari dashboardnya.
+
+ Administrasi Bimbel tulisan ini ganti dengan Belajar dengan cinta.
+
+ Hilangkan tulisan Admin: Admin / 123456
+
+ Kenapa perubahan tidak permanen? saat dibuka di browser lain data kembali kesemula?
+
+Dashboard tentor - Absen kelas tidak ada daftar siswanya. perbaiki. cara masukkan siswa ke kelas bagaimana? sediakan fitur edit dan hapus pada riwayat transaksi. pada tab pembayaran spp bisa mengembalikan status lunas ke belum lunas jika riwayat transaksi spp dihapus.
+hilangkan tulisan ini Default admin: Username Admin / sandi 123456.
+
+warna branding tidak bisa berubah.perbaiki.
+
+tambahkan tabel rekap jadwal. 
+misalnya: 
+senin:
+tahfidz & tahsin: 10.00-11.00
+Preschool & iqra: 11.00-12.00
+dst.... sesuai jadwal yang dimasukan.
+
+beri admin akses edit semua data siswa dan mentor semua data form pendaftaran.
+foto siswa dan tentor hilang di panel admin. perbaiki.
+tambah fitur edit nama kelas.
+
+formula penghitungan gaji terntor. ...% dari spp Siswa perprogram yang dia ajar. misalnya Bayu kelas preschool 4 orang siswa, tahfidz & tahsin 2 orang. total 6 orang siswa . jadi gai Bayu 50% dari spp program preschool dan tahfidz & tahsin.
+
