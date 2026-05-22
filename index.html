@@ -1,707 +1,361 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wakaf Asrama Putri - Ma'had At-Tauhid</title>
-    <link rel="icon" type="image/png" href="logo.jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #065f46;
-            --primary-light: #10b981;
-            --accent: #fbbf24;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --bg-soft: #f9fafb;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wakaf Asrama Putri — Ma'had At-Tauhid</title>
+<meta name="description" content="Wakaf pembangunan asrama santriwati penghafal Al-Qur'an di Ma'had At-Tauhid. Investasi akhirat yang tak terputus." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0f5132;          /* deep emerald */
+    --primary-dark:#0a3d24;
+    --primary-light:#1a7a4c;
+    --gold:#c9a24a;
+    --gold-soft:#e6c879;
+    --cream:#fbf8f1;
+    --bg:#fbf8f1;
+    --text:#1f2a24;
+    --muted:#1f2a24;
+    --border:#ece4d3;
+    --card:#ffffff;
+    --secondary:#f3ede0;
+    --radius:14px;
+    --shadow-elegant:0 20px 50px -15px rgba(15,81,50,.28);
+    --shadow-soft:0 8px 24px -8px rgba(15,81,50,.15);
+    --font-display:'Playfair Display',serif;
+    --font-body:'Plus Jakarta Sans',system-ui,sans-serif;
+    --font-arabic:'Amiri',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.01em;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main); background: white; line-height: 1.6; }
-/* NAVBAR SECTION */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--navbar-bg);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 15px 0;
-        }
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
 
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(251,248,241,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(236,228,211,.7)}
+  .nav-inner{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;color:var(--primary);font-weight:700}
+  .logo .badge{width:38px;height:38px;border-radius:999px;background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;display:grid;place-items:center;font-size:13px}
+  .logo span.name{font-family:var(--font-display);font-size:1.25rem}
+  .nav-links{display:flex;gap:28px;list-style:none;font-size:.92rem;font-weight:500}
+  .nav-links a{transition:color .25s}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--primary);padding:8px;cursor:pointer}
+  .nav-mobile{display:none;border-top:1px solid var(--border);background:var(--bg);padding:16px 20px;flex-direction:column;gap:14px;font-size:.95rem;font-weight:500}
+  .nav-mobile.open{display:flex}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
+  /* HERO */
+  .hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text);padding:160px 20px 150px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,241,.85),rgba(243,237,224,.9)),url('bg.jpeg') center/cover}
+  
+  .hero-content{position:relative;max-width:760px;z-index:6}
+  
+  /* PERUBAHAN: Menambahkan font-weight: 700 agar teks arab Bismillah menjadi BOLD */
+  .hero .arabic{font-family:var(--font-arabic);color:var(--primary);font-size:1.8rem;margin-bottom:14px;font-weight:400}
+  
+  .ornament{display:flex;align-items:center;gap:1rem;max-width:300px;margin:0 auto 22px}
+  .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:linear-gradient(to right,transparent,var(--primary),transparent)}
+  .eyebrow{color:var(--primary-light);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;white-space:nowrap}
+  .hero h1{font-size:clamp(2.6rem,6.5vw,5rem);line-height:1.05;margin-bottom:18px;font-weight:600;color:var(--primary)}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero p.lead{font-size:1.05rem;font-weight:bold;color:var(--primary);max-width:560px;margin:0 auto 30px}
+  
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;border-radius:999px;padding:14px 30px;transition:transform .25s,opacity .25s,background .25s;cursor:pointer;border:0;font-family:inherit}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:var(--primary-dark);box-shadow:var(--shadow-elegant)}
+  .btn-gold:hover{transform:translateY(-2px) scale(1.02)}
+  .btn-emerald{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff}
+  .btn-emerald:hover{opacity:.93;transform:translateY(-2px)}
 
-        .logo img {
-            height: 40px; /* Sesuaikan tinggi logo Anda */
-            width: auto;
-        }
+  /* PROGRESS CARD */
+  .progress-wrap{max-width:1000px;margin:-90px auto 0;padding:0 20px;position:relative;z-index:5}
+  .progress-card{background:var(--card);border-radius:24px;padding:32px;box-shadow:var(--shadow-elegant);border:1px solid rgba(236,228,211,.6)}
+  .progress-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .eyebrow-small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .amount{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--primary)}
+  .target{font-size:.9rem;color:var(--muted)}
+  .target b{color:var(--text)}
+  .track{height:14px;background:var(--secondary);border-radius:999px;overflow:hidden}
+  .fill{height:100%;width:0%;background:linear-gradient(90deg,var(--primary),var(--gold));transition:width 1.5s cubic-bezier(.1,.5,.5,1)}
+  .progress-foot{display:flex;justify-content:space-between;margin-top:10px;font-size:.85rem}
+  .progress-foot b{color:var(--primary)}
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
+  /* SECTION */
+  section.block{padding:80px 0}
+  .block .head{text-align:center;margin-bottom:48px}
+  .block .head h2{font-size:clamp(2rem,4.5vw,3.2rem);color:var(--primary);margin:6px 0 12px}
+  .block .head p{color:var(--muted);max-width:620px;margin:0 auto}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+  .gallery .card{background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-soft);transition:transform .3s}
+  .gallery .card:hover{transform:translateY(-6px)}
+  .gallery .thumb{aspect-ratio:4/3;overflow:hidden;background:var(--secondary)}
+  .gallery .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .gallery .card:hover .thumb img{transform:scale(1.05)}
+  .gallery .body{padding:20px}
+  .gallery h3{font-size:1.25rem;color:var(--primary);margin-bottom:6px}
+  .gallery p{font-size:.88rem;color:var(--muted)}
 
-        .nav-links a:hover {
-            color: var(--primary-light);
-        }
+  /* PROGRAMS */
+  .programs-bg{background:rgba(243,237,224,.45)}
+  .programs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(min-width:900px){.programs{grid-template-columns:repeat(4,1fr);gap:24px}}
+  .prog{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;display:flex;flex-direction:column;transition:border-color .25s,box-shadow .25s,transform .25s}
+  .prog:hover{border-color:var(--gold);box-shadow:var(--shadow-elegant);transform:translateY(-3px)}
+  .prog .icon{font-size:2rem;margin-bottom:12px}
+  .prog h3{font-size:1.15rem;color:var(--primary);margin-bottom:8px}
+  .prog p{font-size:.82rem;color:var(--muted);flex:1;margin-bottom:18px}
+  .btn-outline{display:block;text-align:center;border:1px solid var(--primary);color:var(--primary);font-size:.8rem;font-weight:600;padding:10px;border-radius:10px;transition:.25s}
+  .btn-outline:hover{background:var(--primary);color:#fff}
 
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('bg.jpeg');
-            background-size: cover;
-            background-position: center;
-            padding: 20px;
-        }
+  /* DONATION */
+  .donate-card{background:var(--card);border-radius:24px;padding:28px;box-shadow:var(--shadow-elegant);border:1px solid rgba(236,228,211,.6)}
+  @media(min-width:768px){.donate-card{padding:42px}}
+  .donate-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.donate-grid{grid-template-columns:1.3fr 1fr}}
+  .bank{background:rgba(243,237,224,.55);border-radius:14px;padding:18px;border-left:4px solid var(--primary);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .bank .name{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .bank .acc{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);margin:4px 0;letter-spacing:.04em}
+  .bank .holder{font-size:.78rem;color:var(--muted)}
+  .copy-btn{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;border:0;font-family:inherit;font-size:.78rem;font-weight:600;padding:9px 16px;border-radius:10px;cursor:pointer;transition:opacity .2s}
+  .copy-btn:hover{opacity:.9}
+  .note{font-size:.78rem;color:var(--muted);font-style:italic;margin:6px 0 14px}
+  .wa-btn{display:block;text-align:center;background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;font-weight:600;padding:14px;border-radius:12px;box-shadow:var(--shadow-soft);transition:opacity .2s,transform .2s}
+  .wa-btn:hover{opacity:.95;transform:translateY(-2px)}
+  .qris{background:rgba(243,237,224,.55);border-radius:14px;padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .qris h4{font-size:1.1rem;color:var(--primary);font-weight:600;margin-bottom:12px}
+  .qris .qr{width:170px;height:170px;background:#fff;border:1px solid var(--border);border-radius:10px;display:grid;place-items:center;font-size:.75rem;color:var(--muted);padding:12px}
+  .qris .qr img{width:100%;height:100%;object-fit:contain}
+  .qris small{font-size:.7rem;color:var(--muted);margin-top:12px;line-height:1.5}
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 6rem;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
+  /* FOOTER */
+  footer{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;padding:42px 20px;text-align:center;margin-top:40px}
+  
+  /* PERUBAHAN: Menambahkan font-family arab amiri dan membuatnya BOLD juga di bagian bawah */
+  footer .arabic{font-family:var(--font-arabic);font-size:1.6rem;color:var(--gold-soft);margin-bottom:6px;display:block;font-weight:700}
+  footer p{font-size:.88rem;opacity:.85}
 
-        .hero-content p {
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-weight: 300;
-        }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        
-        /* CARD PROGRESS */
-        .donation-card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            margin-top: -100px;
-            position: relative;
-            z-index: 10;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 15px;
-        }
-
-        .amount-big { font-size: 2rem; font-weight: 700; color: var(--primary); }
-        .target-small { font-size: 0.9rem; color: var(--text-muted); }
-
-        .progress-track {
-            background: #e5e7eb;
-            height: 16px;
-            border-radius: 50px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .progress-fill {
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            height: 100%;
-            width: 0%;
-            transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
-        }
-
-        /* GALLERY SECTION (6 CARDS WITH DESCRIPTION) */
-        .section-title {
-            text-align: center;
-            margin: 60px 0 30px;
-        }
-        
-        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        .gallery-item {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .gallery-item:hover { transform: translateY(-10px); }
-
-        .gallery-img-container { height: 200px; overflow: hidden; }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-text { padding: 15px; }
-        .gallery-text h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary); }
-        .gallery-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
-
-
-         /* ========================================= */
-        /* WAQF PROGRAM CARDS (DIPERKECIL DRASTIS)   */
-        /* ========================================= */
-        .waqf-grid {
-            display: grid;
-            /* Kolom minimum diperkecil jadi 150px (sebelumnya 300px) */
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px; /* Jarak antar card dirapatkan */
-            margin-bottom: 60px;
-        }
-
-        .waqf-card {
-            background: white;
-            border-radius: 12px;
-            padding: 15px; /* Padding dikurangi 50% */
-            border: 1px solid #e5e7eb;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .waqf-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-            border-color: var(--primary-light);
-        }
-
-        .waqf-card-icon {
-            font-size: 1.8rem; /* Icon diperkecil */
-            margin-bottom: 10px;
-        }
-
-        .waqf-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 0.95rem; /* Ukuran judul diperkecil */
-            color: var(--primary);
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
-
-        .waqf-card p {
-            color: var(--text-muted);
-            font-size: 0.75rem; /* Ukuran teks diperkecil */
-            margin-bottom: 15px;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-
-        .btn-outline {
-            display: block;
-            text-align: center;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 8px; /* Tombol diperkecil */
-            border-radius: 8px;
-            font-size: 0.75rem; /* Teks tombol diperkecil */
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        /* ========================================= */
-
-           /* ========================================= */
-        /* CSS MODAL / POPUP CODE           */
-        /* ========================================= */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Kelas aktif untuk memunculkan modal */
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-box {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 550px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            transform: scale(0.8);
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .modal-overlay.active .modal-box {
-            transform: scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px; right: 20px;
-            font-size: 1.8rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-        .modal-close:hover { color: var(--text-main); }
-
-        .modal-title {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-            padding-right: 20px;
-        }
-
-        .modal-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        @media (min-width: 480px) {
-            .modal-grid { grid-template-columns: 1.2fr 0.8fr; }
-        }
-
-        .bank-card {
-            background: var(--bg-soft); padding: 15px; border-radius: 12px;
-            border-left: 5px solid var(--primary); margin-bottom: 12px;
-        }
-        .bank-name { font-weight: 700; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
-        .acc-number { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 3px 0; }
-
-        .qris-box { text-align: center; background: var(--bg-soft); padding: 15px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-        .qris-box img { width: 100%; max-width: 160px; border: 1px solid #ddd; border-radius: 8px; background: white;}
-
-        /* ========================================= */
-
-
-        PAYMENT SECTION WITH SHADOW & COPY BUTTON
-        .payment-box {
-            background: white;
-            padding: 40px;
-            border-radius: 24px;
-            margin-bottom: 60px;
-            /* Efek Bayangan Kuat */
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f0f0f0;
-        }
-
-        .payment-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .bank-card-bawah {
-            background: var(--bg-soft);
-            padding: 20px;
-            border-radius: 16px;
-            border-left: 5px solid var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .bank-info { flex-grow: 1; }
-        .bank-name { font-weight: 700; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
-        .acc-number { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 5px 0; }
-
-        .btn-copy {
-            background: var(--primary-light);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .btn-copy:hover { background: var(--primary); }
-
-        .qris-box { text-align: center; background: var(--bg-soft); padding: 20px; border-radius: 16px; }
-        .qris-box img { width: 180px; border: 1px solid #ddd; border-radius: 8px; background: white; padding: 10px; }
-
-        .btn-main {
-            display: block;
-            text-align: center;
-            background: var(--primary);
-            color: white;
-            padding: 18px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .btn-main:hover { opacity: 0.9; transform: translateY(-3px); }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 3rem; }
-            .hero-content p {font-size: 1.2rem; color: #00ff37; font-weight: bold; font-family: 'Playfair Display', serif; p}
-            .hero-content a {padding: 10px 20px; margin: 0 auto 10px;}
-            .payment-grid { grid-template-columns: 1fr; }
-            .hero { height: 60vh; }
-        }
-    </style>
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    .nav-links{display:none}
+    .nav-toggle{display:block}
+    .hero{min-height:80vh;padding:120px 20px 140px}
+    section.block{padding:60px 0}
+    .progress-card{padding:24px;border-radius:20px}
+    .donate-card{border-radius:20px}
+  }
+</style>
 </head>
 <body>
-<!-- NAVBAR -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="logo.jpeg" alt="Logo Ma'had At-Tauhid">
-                <span>Ma'had At-Tauhid</span>
-            </a>
-            <!-- <ul class="nav-links">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#donasi">Progress</a></li>
-                <li><a href="#dokumentasi">Dokumentasi</a></li>
-                <li><a href="#donasi-rekening">Wakaf</a></li>
-            </ul> -->
-        </div>
-    </nav>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Investasi Akhirat Anda</h1>
-            <p>Bantu wujudkan hunian yang layak bagi para santriwati penghafal Al-Qur'an di Ma'had At-Tauhid.</p>
-            <a href="#donasi-rekening" class="btn-main" style="display: inline-block; padding: 15px 40px;">Wakaf Sekarang</a>
-        </div>
-    </section>
 
-    <div class="container">
-        <div class="donation-card" id="donasi">
-            <div class="progress-header">
-                <div>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Dana Terkumpul</p>
-                    <div class="amount-big" id="text-terkumpul">Rp 0</div>
-                </div>
-                <div class="target-small">
-                    Target: <span id="text-target">Rp 0</span>
-                </div>
-            </div>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img class="badge" src="logo.jpeg" alt="logo">
+      <span class="name">Ma'had At-Tauhid</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#progress">Progress</a></li>
+      <li><a href="#kondisi">Kondisi</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#donasi">Donasi</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navMobile').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <ul id="navMobile" class="nav-mobile">
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#kondisi">Kondisi</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#donasi">Donasi</a></li>
+  </ul>
+</nav>
 
-            <div class="progress-track">
-                <div class="progress-fill" id="progress-bar"></div>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <p id="text-persentase" style="font-weight: 700; color: var(--primary-light);">0%</p>
-                <p style="font-size: 0.8rem; color: var(--text-muted);">Terakhir diupdate: Real-time</p>
-            </div>
-        </div>
+<header class="hero">
+  <div class="hero-content">
+    <p class="arabic">بسم الله الرحمن الرحيم</p>
+    <div class="ornament"><span class="eyebrow">Wakaf Asrama Putri</span></div>
+    <h1>Investasi <em>Akhirat</em><br/>Anda</h1>
+    <p class="lead">Bantu wujudkan hunian yang layak bagi para santriwati penghafal Al-Qur'an di Ma'had At-Tauhid — pahala mengalir tiada henti.</p>
+    <a href="#donasi" class="btn btn-gold">Wakaf Sekarang →</a>
+  </div>
+</header>
 
-        <div class="section-title">
-            <h2>Kondisi Asrama & Ruang Kelas Saat ini</h2>
-            <p>Saat ini santriwati masih belajar dan tinggal di tempat bekas kandang ayam di atas kolam ikan.</p>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <div class="gallery-img-container"><img src="asrama.jpeg" alt="Lahan"></div>
-                <div class="gallery-text">
-                    <h3>Kondisi Asrama</h3>
-                    <p>Semula,bangunan ini adalah kandang ayam, kemudian diubah menjadi hunian santriwati. Asrama panggung di atas kolam beralaskan pelupuh bambu yang dinginnya angin  menusuk tulang, terletak di lahan yang sempit yang tidak memungkinkan untuk perluasan bangunan</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img-container"><img src="belajar.jpeg" alt="Asrama Putri"></div>
-                <div class="gallery-text">
-                    <h3>Ruang Kelas Putri</h3>
-                    <p>Para santriwati tetap semangat belajar meski di tempat yang penuh dengan keterbatasan</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img-container"><img src="bg.jpeg" alt="Ruang Kelas"></div>
-                <div class="gallery-text">
-                    <h3>Asrama Putri</h3>
-                    <p>Asrama berlantaikan bambu.</p>
-                </div>
-            </div>
-             <div class="gallery-item">
-                <div class="gallery-img-container"><img src="tanah.jpeg" alt="Santri"></div>
-                <div class="gallery-text">
-                    <h3>Lahan Baru</h3>
-                    <p>Alhamdulillah tanah wakaf seluas 1 hektar, di atas tanah inilah akan dibangun asrama, masjid, ruang  belajar dan hunian asatidz.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img-container"><img src="lahan.jpeg" alt="Briefing"></div>
-                <div class="gallery-text">
-                    <h3>Lahan</h3>
-                    <p>Lokasi lahan yang akan dibangun</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img-container"><img src="tanah-lahan.jpeg" alt="Desain"></div>
-                <div class="gallery-text">
-                    <h3>Lahan</h3>
-                    <p>Lokasi lahan yang akan dibangun.</p>
-                </div>
-            </div>
-        </div>
-
-  <!-- /* Program Waqf */ -->
-        
-       
-        <div class="section-title" id="donasi-rekening">
-            <h2>Pilihan Program Wakaf</h2>
-            <p>Pilih ladang amal jariyah yang ingin Anda bangun bersama kami</p>
-        </div>
-
-        <div class="waqf-grid">
-            <div class="waqf-card">
-                <div class="waqf-card-icon">🏢</div>
-                <h3>Asrama</h3>
-                <p>Membangun asrama yang nyaman untuk santriwati penghafal Al-Qur'an.</p>
-                <button class="btn-outline" onclick="openModal('Pembangunan Asrama')">Transfer Sekarang</button>
-            </div>
-
-            <div class="waqf-card">
-                <div class="waqf-card-icon">📚</div>
-                <h3>Ruang Belajar</h3>
-                <p>Ruang representatif menunjang pendidikan santri.</p>
-                <button class="btn-outline" onclick="openModal('Pembangunan Kelas & Ruang Belajar')">Transfer Sekarang</button>
-            </div>
-
-            <div class="waqf-card">
-                <div class="waqf-card-icon">🏡</div>
-                <h3>Hunian Guru</h3>
-                <p>Memuliakan para asatidz dengan tempat tinggal yang nyaman.</p>
-                <button class="btn-outline" onclick="openModal('Pembangunan Rumah Hunian Guru')">Transfer Sekarang</button>
-            </div>
-
-            <div class="waqf-card">
-                <div class="waqf-card-icon">🌱</div>
-                <h3>Wakaf Produktif</h3>
-                <p>Aset produktif untuk operasional dan pengembangan dakwah.</p>
-                <button class="btn-outline" onclick="openModal('Manfaat Produktif & Pengembangan Dakwah')">Transfer Sekarang</button>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="paymentModal" onclick="closeModal(event)">
-        <div class="modal-box">
-            <button class="modal-close" onclick="forceCloseModal()">&times;</button>
-            <h3 class="modal-title">Salurkan Wakaf Terbaik</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Program: <span id="programName" style="font-weight: 700; color: var(--primary-light);">Umum</span></p>
-            
-            <div class="modal-grid">
-                <div>
-                    <div class="bank-card">
-                        <p class="bank-name">BSI (Bank Syariah Indonesia)</p>
-                        <p class="acc-number">1234 5678 90</p>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">An. Yayasan Ma'had At-Tauhid</p>
-                        <button class="btn-copy" onclick="copyToClipboard('norek1')">Salin</button>
-                    </div>
-                    <div class="bank-card">
-                        <p class="bank-name">Bank Muamalat</p>
-                        <p class="acc-number">0987 6543 21</p>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">An. Yayasan Ma'had At-Tauhid</p>
-                        <button class="btn-copy" onclick="copyToClipboard('norek2')">Salin</button>
-                    </div>
-                    <a id="waConfirmBtn" href="#" target="_blank" class="btn-main" style="background: #25d366; font-size: 0.9rem; padding: 10px;">
-                        Konfirmasi via WhatsApp
-                    </a>
-                </div>
-
-                <div class="qris-box">
-                    <p style="font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">Scan QRIS</p>
-                    <img src="qris.jpeg" alt="QRIS">
-                    <p style="font-size: 0.65rem; color: var(--text-muted); margin-top: 5px; text-align: center;">Mendukung: GoPay, OVO, Dana, LinkAja & Mobile Banking</p>
-                </div>
-            </div>
-        </div>
-
+<section id="progress" class="progress-wrap">
+  <div class="progress-card">
+    <div class="progress-head">
+      <div>
+        <p class="eyebrow-small">Dana Terkumpul</p>
+        <p class="amount" id="text-terkumpul">Rp 0</p>
+      </div>
+      <p class="target">Target: <b id="text-target">Rp 0</b></p>
     </div>
-        <div class="section-title" >
-            <h2>Salurkan Wakaf Terbaik</h2>
-        </div>
-
-        <div class="payment-box">
-            <div class="payment-grid">
-                <div>
-                    <div class="bank-card-bawah">
-                        <div class="bank-info">
-                            <p class="bank-name">BSI (Bank Syariah Indonesia)</p>
-                            <p class="acc-number" id="norek1">1234567890</p>
-                            <p style="font-size: 0.8rem;">A.n Yayasan Ma'had At-Tauhid</p>
-                        </div>
-                        <button class="btn-copy" onclick="copyToClipboard('norek1')">Salin</button>
-                    </div>
-
-                    <div class="bank-card-bawah">
-                        <div class="bank-info">
-                            <p class="bank-name">Bank Muamalat</p>
-                            <p class="acc-number" id="norek2">0987654321</p>
-                            <p style="font-size: 0.8rem;">A.n Yayasan Ma'had At-Tauhid</p>
-                        </div>
-                        <button class="btn-copy" onclick="copyToClipboard('norek2')">Salin</button>
-                    </div>
-                    
-                    <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
-                        *Klik tombol salin untuk meng-copy nomor rekening secara otomatis.
-                    </p>
-                    <a href="https://wa.me/+6285158502031" class="btn-main" style="margin-top: 25px; background: #25d366;">
-                        Konfirmasi via WhatsApp
-                    </a>
-                </div>
-
-                <div class="qris-box">
-                    <p style="font-weight: 700; margin-bottom: 15px; color: var(--primary);">Scan QRIS</p>
-                    <img src="qris.jpeg" alt="QRIS">
-                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 15px;">Mendukung: GoPay, OVO, Dana, LinkAja & Mobile Banking</p>
-                </div>
-            </div>
-        </div>
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="progress-foot">
+      <b id="pct">0% Terkumpul</b>
+      <span style="color:var(--muted)">Update real-time</span>
     </div>
+  </div>
+</section>
 
-    <footer style="text-align: center; padding: 40px; color: var(--text-muted); border-top: 1px solid #eee;">
-        <p>&copy; 2026 Ma'had At-Tauhid. Semoga menjadi amal jariyah yang tak terputus.</p>
-    </footer>
+<section id="kondisi" class="block">
+  <div class="container">
+    <div class="head">
+      <div class="ornament"><span class="eyebrow" style="color:var(--gold)">Kondisi Saat Ini</span></div>
+      <h2>Asrama &amp; Ruang Kelas</h2>
+      <p>Santriwati masih belajar dan tinggal di tempat bekas kandang ayam di atas kolam ikan.</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
 
-    <script>
-        // Fungsi Salin Rekening
-        function copyToClipboard(elementId) {
-            const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = event.target;
-                const originalText = btn.innerText;
-                btn.innerText = "Tersalin!";
-                btn.style.background = "#059669";
-                
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.background = "#10b981";
-                }, 2000);
-            });
-        }
-    </script>
+<section id="program" class="block programs-bg">
+  <div class="container">
+    <div class="head">
+      <div class="ornament"><span class="eyebrow" style="color:var(--gold)">Pilih Program</span></div>
+      <h2>Pilihan Wakaf</h2>
+      <p>Pilih ladang amal jariyah yang ingin Anda bangun bersama kami.</p>
+    </div>
+    <div class="programs" id="programs"></div>
+  </div>
+</section>
 
-    <script>
-        // Fungsi Membuka Popup Modal
-        function openModal(program) {
-            document.getElementById('programName').innerText = program;
-            
-            // Atur teks otomatis untuk chat konfirmasi WhatsApp berdasarkan tombol kartu yang diklik
-            const waNumber = "6281234567890"; // GANTI DENGAN NOMOR HP ADMIN MA'HAD
-            const waMessage = encodeURIComponent(`Bismillah, saya ingin mengonfirmasi transfer wakaf untuk program: *Wakaf ${program}* di Ma'had At-Tauhid.`);
-            document.getElementById('waConfirmBtn').href = `https://wa.me/${waNumber}?text=${waMessage}`;
-            
-            document.getElementById('paymentModal').classList.add('active');
-        }
+<section id="donasi" class="block">
+  <div class="container">
+    <div class="head">
+      <div class="ornament"><span class="eyebrow" style="color:var(--gold)">Salurkan</span></div>
+      <h2>Wakaf Terbaik Anda</h2>
+    </div>
+    <div class="donate-card">
+      <div class="donate-grid">
+        <div>
+          <div class="bank">
+            <div>
+              <p class="name">BSI (Bank Syariah Indonesia)</p>
+              <p class="acc">1234567890</p>
+              <p class="holder">a.n. Yayasan Ma'had At-Tauhid</p>
+            </div>
+            <button class="copy-btn" onclick="copyAcc(this,'1234567890')">Salin</button>
+          </div>
+          <div class="bank">
+            <div>
+              <p class="name">Bank Muamalat</p>
+              <p class="acc">0987654321</p>
+              <p class="holder">a.n. Yayasan Ma'had At-Tauhid</p>
+            </div>
+            <button class="copy-btn" onclick="copyAcc(this,'0987654321')">Salin</button>
+          </div>
+          <p class="note">*Klik salin untuk menyimpan nomor rekening otomatis.</p>
+          <a class="wa-btn" target="_blank" rel="noreferrer" href="https://wa.me/6285158502031">Konfirmasi via WhatsApp</a>
+        </div>
+        <div class="qris">
+          <h4>Scan QRIS</h4>
+          <div class="qr"><img src="qris.jpeg" alt="QRIS Ma'had At-Tauhid"></div>
+          <small>GoPay, OVO, Dana, LinkAja &amp; Mobile Banking</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Fungsi Menutup Popup Modal saat klik area luar kotak putih
-        function closeModal(event) {
-            if (event.target.id === 'paymentModal') {
-                document.getElementById('paymentModal').classList.remove('active');
-            }
-        }
+<footer>
+  <span class="arabic">جزاكم الله خيرا</span>
+  <p>© 2026 Ma'had At-Tauhid — Semoga menjadi amal jariyah yang tak terputus.</p>
+</footer>
 
-        // Fungsi Menutup Popup melalui tombol silang (x)
-        function forceCloseModal() {
-            document.getElementById('paymentModal').classList.remove('active');
-        }
-    </script>
+<script>
+  const gallery = [
+    {img:"asrama.jpeg",title:"Kondisi Asrama",desc:"Semula, bangunan ini adalah kandang ayam, kemudian diubah menjadi hunian santriwati. Asrama panggung di atas kolam beralaskan pelupuh bambu yang dinginnya angin menusuk tulang, terletak di lahan yang sempit yang tidak memungkinkan untuk perluasan bangunan."},
+    {img:"belajar.jpeg",title:"Ruang Kelas Putri",desc:"Para santriwati tetap semangat belajar meski di tempat yang penuh dengan keterbatasan."},
+    {img:"bg.jpeg",title:"Asrama Putri",desc:"Asrama berlantaikan bambu."},
+    {img:"tanah.jpeg",title:"Lahan Baru",desc:"Alhamdulillah tanah wakaf seluas 1 hektar, di atas tanah inilah akan dibangun asrama, masjid, ruang belajar dan hunian asatidz."},
+    {img:"lahan.jpeg",title:"Lahan",desc:"Lokasi lahan yang akan dibangun."},
+    {img:"tanah-lahan.jpeg",title:"Lahan",desc:"Lokasi lahan yang akan dibangun."}
+  ];
+  
+  document.getElementById('gallery').innerHTML = gallery.map(g=>`
+    <article class="card">
+      <div class="thumb"><img src="${g.img}" alt="${g.title}" loading="lazy"></div>
+      <div class="body"><h3>${g.title}</h3><p>${g.desc}</p></div>
+    </article>`).join('');
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-        import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+  const programs = [
+    {icon:"🏢",title:"Asrama",desc:"Membangun asrama yang nyaman untuk santriwati penghafal Al-Qur'an."},
+    {icon:"📖",title:"Ruang Belajar",desc:"Ruang representatif menunjang pendidikan santri."},
+    {icon:"🏡",title:"Hunian Guru",desc:"Memuliakan para asatidz dengan tempat tinggal yang nyaman."},
+    {icon:"🌱",title:"Wakaf Produktif",desc:"Aset produktif untuk operasional dan pengembangan dakwah."}
+  ];
+  
+  document.getElementById('programs').innerHTML = programs.map(p=>`
+    <div class="prog">
+      <div class="icon">${p.icon}</div>
+      <h3>${p.title}</h3><p>${p.desc}</p>
+      <a href="#donasi" class="btn-outline">Transfer Sekarang</a>
+    </div>`).join('');
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyDaQXGJi1N_o4qulWyne1t-VBsFe5YKqCs",
-            authDomain: "donasi-727e7.firebaseapp.com",
-            projectId: "donasi-727e7",
-            storageBucket: "donasi-727e7.firebasestorage.app",
-            messagingSenderId: "1009738505362",
-            appId: "1:1009738505362:web:f0872eb9a6545583d3da4b"
-        };
+  function copyAcc(btn,num){
+    navigator.clipboard.writeText(num);
+    const o=btn.textContent;btn.textContent='Tersalin ✓';
+    setTimeout(()=>btn.textContent=o,1800);
+  }
+</script>
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+  import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 
-        const formatRupiah = (angka) => {
-            return new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR',
-                minimumFractionDigits: 0
-            }).format(angka);
-        };
+  const firebaseConfig = {
+      apiKey: "AIzaSyDaQXGJi1N_o4qulWyne1t-VBsFe5YKqCs",
+      authDomain: "donasi-727e7.firebaseapp.com",
+      projectId: "donasi-727e7",
+      storageBucket: "donasi-727e7.firebasestorage.app",
+      messagingSenderId: "1009738505362",
+      appId: "1:1009738505362:web:f0872eb9a6545583d3da4b"
+  };
 
-        const campaignRef = doc(db, "campaigns", "asrama_putri");
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-        onSnapshot(campaignRef, (docSnap) => {
-            if (docSnap.exists()) {
-                const data = docSnap.data();
-                const terkumpul = data.terkumpul || 0;
-                const target = data.target || 1;
-                let persen = (terkumpul / target) * 100;
-                if (persen > 100) persen = 100;
+  const formatRupiah = (angka) => {
+      return new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR',
+          minimumFractionDigits: 0
+      }).format(angka);
+  };
 
-                document.getElementById('text-terkumpul').innerText = formatRupiah(terkumpul);
-                document.getElementById('text-target').innerText = formatRupiah(target);
-                document.getElementById('text-persentase').innerText = Math.round(persen) + "% Terkumpul";
-                document.getElementById('progress-bar').style.width = persen + "%";
-            }
-        });
-    </script>
+  const campaignRef = doc(db, "campaigns", "asrama_putri");
+
+  onSnapshot(campaignRef, (docSnap) => {
+      if (docSnap.exists()) {
+          const data = docSnap.data();
+          const terkumpul = data.terkumpul || 0;
+          const target = data.target || 1;
+          
+          let persen = (terkumpul / target) * 100;
+          if (persen > 100) persen = 100;
+
+          if (terkumpul > 0 && persen < 0.01) {
+              persen = 0.01;
+          }
+
+          let teksPersen = parseFloat(persen.toFixed(2)).toString().replace('.', ',');
+
+          document.getElementById('text-terkumpul').innerText = formatRupiah(terkumpul);
+          document.getElementById('text-target').innerText = formatRupiah(target);
+          document.getElementById('pct').innerText = teksPersen + "% Terkumpul";
+          
+          document.getElementById('fill').style.width = persen + "%";
+      }
+  });
+</script>
 </body>
 </html>
