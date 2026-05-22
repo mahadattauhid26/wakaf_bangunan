@@ -151,6 +151,19 @@
     .progress-card{padding:24px;border-radius:20px}
     .donate-card{border-radius:20px}
   }
+
+  /* BARU: STYLING UNTUK KOTAK KEUTAMAAN WAKAF (Sesuai Gambar Upload) */
+  .keutamaan-bg{background:rgba(243,237,224,.30)}
+  .keutamaan-grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:700px;margin:0 auto}
+  .keutamaan-card{background:var(--card);border-radius:16px;padding:32px 24px;text-align:center;border:1px solid rgba(236,228,211,.8);box-shadow:var(--shadow-soft);transition:transform .25s}
+  .keutamaan-card:hover{transform:translateY(-3px)}
+  .keutamaan-icon{width:60px;height:60px;background:var(--primary-light);color:#fff;border-radius:999px;display:grid;place-items:center;margin:0 auto 16px}
+  .keutamaan-card h3{font-family:var(--font-body);font-size:1.35rem;color:var(--primary-light);font-weight:700;margin-bottom:12px}
+  .keutamaan-card p{font-size:.95rem;color:var(--text);font-weight:400;line-height:1.6}
+
+  @media(max-width:768px){
+    .keutamaan-card{padding:24px 18px}
+  }
 </style>
 </head>
 <body>
@@ -264,8 +277,40 @@
       </div>
     </div>
   </div>
-</section>
+</section><section id="keutamaan" class="block keutamaan-bg">
+  <div class="container">
+    <div class="head">
+      <h2>Keutamaan Wakaf</h2>
+    </div>
+    <div class="keutamaan-grid">
+      
+      <div class="keutamaan-card">
+        <div class="keutamaan-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="20" height="12" rx="2"></rect><circle cx="12" cy="15" r="2.5"></circle><path d="M12 2v7"></path><path d="M9 5h6"></path></svg>
+        </div>
+        <h3>Amal Jariyah</h3>
+        <p>Pahala wakaf terus mengalir selama manfaatnya dirasakan.</p>
+      </div>
 
+      <div class="keutamaan-card">
+        <div class="keutamaan-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+        </div>
+        <h3>Investasi Akhirat</h3>
+        <p>Wakaf menjadi salah satu amal yang tidak terputus pahalanya.</p>
+      </div>
+
+      <div class="keutamaan-card">
+        <div class="keutamaan-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+        </div>
+        <h3>Manfaat bagi Umat</h3>
+        <p>Wakaf ini menjadi bagian dari pembangunan pendidikan Islam.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 <footer>
   <span class="arabic">جزاكم الله خيرا</span>
   <p>© 2026 Ma'had At-Tauhid — Semoga menjadi amal jariyah yang tak terputus.</p>
