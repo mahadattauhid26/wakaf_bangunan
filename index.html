@@ -132,7 +132,7 @@
   .wa-btn:hover{opacity:.95;transform:translateY(-2px)}
   .qris{background:rgba(243,237,224,.55);border-radius:14px;padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
   .qris h4{font-size:1.1rem;color:var(--primary);font-weight:600;margin-bottom:12px}
-  .qris .qr{width:170px;height:170px;background:#fff;border:1px solid var(--border);border-radius:10px;display:grid;place-items:center;font-size:.75rem;color:var(--muted);padding:12px}
+  .qris .qr{width:230px;height:310px;background:#fff;border:1px solid var(--border);border-radius:10px;display:grid;place-items:center;font-size:.75rem;color:var(--muted);padding:12px}
   .qris .qr img{width:100%;height:100%;object-fit:contain}
   .qris small{font-size:.7rem;color:var(--muted);margin-top:16px;line-height:1.5}
 
@@ -164,6 +164,70 @@
 
   @media(max-width:768px){
     .keutamaan-card{padding:24px 18px}
+  }
+
+  /* BARU: STYLING UNTUK SEKSI DOKUMEN LEGALITAS */
+  .legalitas-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: var(--shadow-elegant);
+    border: 1px solid rgba(236,228,211,.8);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .legalitas-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+  .legalitas-head .check-box {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .legalitas-head h2 {
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    color: #0f172a;
+    font-weight: 800;
+  }
+  .legalitas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .legalitas-list li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+  }
+  .legalitas-list li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    top: -2px;
+    color: #94a3b8;
+    font-size: 1.5rem;
+  }
+  .legalitas-list .bold-text {
+    font-weight: 700;
+    color: #1e293b;
+  }
+  @media(max-width:768px){
+    .legalitas-card {
+      padding: 24px 20px;
+    }
+    .legalitas-head h2 {
+      font-size: 1.5rem;
+    }
+    .legalitas-list li {
+      font-size: 0.95rem;
+    }
   }
 </style>
 </head>
@@ -317,6 +381,26 @@
   </div>
 </section>
 
+<section id="legalitas" class="block">
+  <div class="container">
+    <div class="legalitas-card">
+      <div class="legalitas-head">
+        <span class="check-box">✅</span>
+        <h2>Dokumen Legalitas</h2>
+      </div>
+      <ul class="legalitas-list">
+        <li>Nama Yayasan: <span class="bold-text">BINAUL UMMAH ATTAUHID</span></li>
+        <li>Nomor: <span class="bold-text">5026051932220505</span></li>
+        <li>No Akta Notaris: <span class="bold-text">Nomor 02, Tanggal 18 Mei 2026</span></li>
+        <li>SK MenHukHam: <span class="bold-text"> AHU-0019342.AH.01.12.TAHUN 2026 </span></li>
+        <li>No NPWP: <span class="bold-text">0439.7424.1242.5000</span></li>
+        <li>Kondisi/Lingkungan: Baik dan Kondusif</li>
+        <li>Alamat: Kp. Karangnunggal RT 007 RW 001, Kecamatan Karangnunggal, Kabupaten Tasikmalaya</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <footer>
   <span class="arabic">جزاكم الله خيرا</span>
   <p>© 2026 Ma'had At-Tauhid — Semoga menjadi amal jariyah yang tak terputus.</p>
@@ -327,9 +411,9 @@
     {img:"asrama.jpeg",title:"Kondisi Asrama",desc:"Semula, bangunan ini adalah kandang ayam, kemudian diubah menjadi hunian santriwati. Asrama panggung di atas kolam beralaskan pelupuh bambu yang dinginnya angin menusuk tulang, terletak di lahan yang sempit yang tidak memungkinkan untuk perluasan bangunan."},
     {img:"belajar.jpeg",title:"Ruang Kelas Putri",desc:"Para santriwati tetap semangat belajar meski di tempat yang penuh dengan keterbatasan."},
     {img:"bg.jpeg",title:"Tampak Luar Asrama",desc:"Asrama berlantaikan bambu."},
-    {img:"tanah.jpeg",title:"Lahan Baru",desc:"Alhamdulillah tanah wakaf seluas 1 hektar, di atas tanah inilah akan dibangun asrama, masjid, ruang belajar dan hunian asatidz."},
-    {img:"lahan.jpeg",title:"Lahan",desc:"Lokasi lahan yang akan dibangun."},
-    {img:"tanah-lahan.jpeg",title:"Lahan",desc:"Lokasi lahan yang akan dibangun."}
+    {img:"tanah.jpg",title:"Lahan Baru",desc:"Alhamdulillah tanah wakaf seluas 1 hektar, di atas tanah inilah akan dibangun asrama, masjid, ruang belajar dan hunian asatidz."},
+    {img:"lahan.jpg",title:"Lahan",desc:"Lokasi lahan yang akan dibangun."},
+    {img:"rencana.jpg",title:"Rencana Pembangunan",desc:"Gambar rancangan rencana pembangunan asrama putri Ma'had At-Tauhid."}
   ];
   
   document.getElementById('gallery').innerHTML = gallery.map(g=>`

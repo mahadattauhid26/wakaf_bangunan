@@ -63,3 +63,23 @@ formula penghitungan gaji terntor. ...% dari spp Siswa perprogram yang dia ajar.
 
 perbaiki layou yang terlalu menumpuk di mobile view.
 perbaiki lagi ukuran icon pengumuman dan keuangan
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyD0QeMXW2YSuRv-GfcDLfgiX0zQ-xo3D84",
+    authDomain: "landingpage-999ee.firebaseapp.com",
+    projectId: "landingpage-999ee",
+    storageBucket: "landingpage-999ee.firebasestorage.app",
+    messagingSenderId: "717348804535",
+    appId: "1:717348804535:web:9a3a19720a1cb91a883a32"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
