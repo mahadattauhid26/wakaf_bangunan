@@ -1,14 +1,14 @@
-Buat aplikasi tampilan seperti aplikasi mobile untuk mencatat administrasi Bimbel NUN (adalah nun Hijaiyah ن) 
+Buat aplikasi mobile untuk mencatat administrasi Pesantren
 
-Halaman utama: form login ( Username & katasandi). Khusus admin masuk dengan : nama lengkap: Admin, katasandi: 123456.
+Halaman utama: form login. Khusus admin masuk dengan : nama lengkap: Admin, katasandi:12admin3
 
-Tombol daftar : (daftar sebagai siswa atau tentor) popup form pendaftaran siswa: Username, Sandi, nama lengkap,jenis kelamin, usia,nama ibu, nama ayah, alamat, no hp, pilihan program (pake radio button maksimal 3 pilihan) : radio button): tahsin& tahfidz, diniyah, materi pesantren modern, preschool&iqra, tahfidz&iqra, bahasa arab,desain grafis,mapel sekolah, persiapan masuk pesantren, desain grafis (minimal usia 12 tahun), Biaya SPP : (radio button) rp. 100.000 (tahsin&tahfidz, preschool & iqra, tahfidz & iqra, bahasa arab, mapel sekolah), rp. 150.000, (materi pesantren modern, persiapan masuk pesantren) rp. 200.000 (desain grafis), isi Kolom spp otomatis sesuai pilihan program (jumlahkan jika lebih dari 1 program) . Saat pilih kelas bisa pilih jadwal yg ada juga, jika belum ada jadwal bisa ditambahkan oleh admin setelah mendaftar.
+Tombol daftar : (daftar sebagai siswa atau tentor) popup form pendaftaran siswa: Username, Sandi, nama lengkap,jenis kelamin, usia,nama ibu, nama ayah, alamat, no hp wali, pilihan program (pake radio button maksimal 3 pilihan) : radio button): tahfidz & tahsin, diniyah, materi pesantren modern, preschool&iqra, tahfidz&iqra, bahasa arab,desain grafis,mapel sekolah, persiapan masuk pesantren, desain grafis (minimal usia 12 tahun), Biaya SPP : (radio button) rp. 150.000 (tahsin&tahfidz, preschool & iqra, tahfidz & iqra, bahasa arab, mapel sekolah), rp. 200.000, (materi pesantren modern, persiapan masuk pesantren) rp. 250.000 (desain grafis), isi Kolom spp otomatis sesuai pilihan program (jumlahkan jika lebih dari 1 program) . Saat pilih kelas bisa pilih jadwal yg ada juga, jika belum ada jadwal bisa ditambahkan oleh admin setelah mendaftar.
 
 Form pendaftaran tentor: username, kata sandi, nama lengkap, alamat, no hp, pilihan program (radio button): tahsin& tahfidz, diniyah, materi pesantren modern, preschool&iqra, tahfidz&iqra, bahasa arab,desain grafis,mapel sekolah, persiapan masuk pesantren, desain grafis, boleh pilih maks 5. 
 
-Dashboard siswa: Foto (di sematkan lewat link di dashboard admin) Nama lengkap, No id, data diri sesuai form pendaftaran. Pengumuman dari tentor kelas dan admin, laporan hasil belajar (kelas dan jadwal kelas, nilai,absensi, catatan,pr, catatan setoran hafalan Al-Quran/ iqra, Catatan SPP)
+Dashboard siswa: Foto (upload) Nama lengkap, No id, data diri sesuai form pendaftaran. Pengumuman dari tentor kelas dan admin, laporan hasil belajar (kelas dan jadwal kelas, nilai,absensi, catatan,pr, catatan setoran hafalan Al-Quran/ iqra, Catatan SPP)
 
-Dashboard tentor: Foto (di sematkan lewat link di dashboard admin) Nama lengkap, nomor induk, data diri sesuai form pendaftaran, data gaji bulanan (ket. Sudah dibayar atau belum). Pengumuman dari tentor untuk kelas (pilihan kelas dropdown dan pengumuman dikirim hanya kelas yg dipilih), form laporan hasil belajar per santri (nilai,tabel absensi (ceklis: hadir, izin, sakit, alpa), catatan,pr, khusus tahfidz & tahsin ada form setoran hafalan Al-Quran [surat, ayat, halaman, juz], khusus iqro ada form catatan iqro [jilid,halaman, dll]). Tabel absensi siswa perkelas (kelas tentor dan siswa ditetapkan oleh admin), absen tentor (hadir,izin,sakit) sesuai jadwal dan kelas.
+Dashboard tentor: Foto (upload) Nama lengkap, nomor induk, data diri sesuai form pendaftaran, data gaji bulanan (ket. Sudah dibayar atau belum). Pengumuman dari tentor untuk kelas (pilihan kelas dropdown dan pengumuman dikirim hanya kelas yg dipilih), form laporan hasil belajar per santri (nilai,tabel absensi (ceklis: hadir, izin, sakit, alpa), catatan,pr, khusus tahfidz & tahsin ada form setoran hafalan Al-Quran [surat, ayat, halaman, juz], khusus iqro ada form catatan iqro [jilid,halaman, dll]). Tabel absensi siswa perkelas (kelas tentor dan siswa ditetapkan oleh admin), absen tentor (hadir,izin,sakit) sesuai jadwal dan kelas.
 
 Dashboard admin:(bisa edit dan hapus data semuanya) Tabel data (ada search) siswa lengkap sesuai form pendaftaran, ada kolom kosong untuk link foto. Ada tombol edit (pilihan program radio button jika diubah spp otomatis ditambah dan semua data) dan hapus di sebelah tabel.
 
@@ -60,26 +60,3 @@ foto siswa dan tentor hilang di panel admin. perbaiki.
 tambah fitur edit nama kelas.
 
 formula penghitungan gaji terntor. ...% dari spp Siswa perprogram yang dia ajar. misalnya Bayu kelas preschool 4 orang siswa, tahfidz & tahsin 2 orang. total 6 orang siswa . jadi gai Bayu 50% dari spp program preschool dan tahfidz & tahsin.
-
-perbaiki layou yang terlalu menumpuk di mobile view.
-perbaiki lagi ukuran icon pengumuman dan keuangan
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyD0QeMXW2YSuRv-GfcDLfgiX0zQ-xo3D84",
-    authDomain: "landingpage-999ee.firebaseapp.com",
-    projectId: "landingpage-999ee",
-    storageBucket: "landingpage-999ee.firebasestorage.app",
-    messagingSenderId: "717348804535",
-    appId: "1:717348804535:web:9a3a19720a1cb91a883a32"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>
