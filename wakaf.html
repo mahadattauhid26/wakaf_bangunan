@@ -1,11 +1,282 @@
-<section id="donasi" class="block">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Konfirmasi Wakaf — Ma'had At-Tauhid</title>
+<link rel="icon" type="image/x-icon" href="logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0f5132;          /* deep emerald */
+    --primary-dark: #0a3d24;
+    --gold: #c9a24a;
+    --gold-soft: #e6c879;
+    --bg: #fbf8f1;
+    --text: #1f2a24;
+    --muted: #5c6760;
+    --border: #ece4d3;
+    --card: #ffffff;
+    --secondary: #f3ede0;
+    --shadow-elegant: 0 20px 50px -15px rgba(15,81,50,.18);
+    --shadow-soft: 0 8px 24px -8px rgba(15,81,50,.1);
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER / NAVBAR */
+  header {
+    background: rgba(251, 248, 241, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(236, 228, 211, 0.7);
+    padding: 16px 0;
+  }
+  .nav-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .logo img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .btn-back {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-back:hover { color: var(--primary); }
+
+  /* MAIN CONTENT */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .container {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  /* HEAD TITLE */
+  .head {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 200px;
+    margin: 0 auto 12px;
+  }
+  .ornament::before, .ornament::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+  .eyebrow {
+    color: var(--gold);
+    font-size: .75rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .head h2 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: var(--primary);
+    font-weight: 800;
+  }
+
+  /* DONATION CARD */
+  .donate-card {
+    background: var(--card);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: var(--shadow-elegant);
+    border: 1px solid rgba(236,228,211,.6);
+  }
+  .donate-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media(min-width: 680px){
+    .donate-grid { grid-template-columns: 1.2fr 1fr; }
+  }
+
+  /* BANK INFO */
+  .bank {
+    background: rgba(243,237,224,.55);
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 4px solid var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .bank .name {
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .bank .acc {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 6px 0;
+    letter-spacing: .02em;
+  }
+  .bank .holder {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .copy-btn {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff;
+    border: 0;
+    font-family: inherit;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity .2s, transform 0.1s;
+    white-space: nowrap;
+  }
+  .copy-btn:hover { opacity: .9; }
+  .copy-btn:active { transform: scale(0.97); }
+
+  .note {
+    font-size: .8rem;
+    color: var(--muted);
+    font-style: italic;
+    margin: 8px 0 20px;
+  }
+  .wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+    transition: opacity .2s, transform .2s;
+    text-align: center;
+  }
+  .wa-btn:hover { opacity: .95; transform: translateY(-2px); }
+
+  /* QRIS */
+  .qris {
+    background: rgba(243,237,224,.4);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--border);
+  }
+  .qris h4 {
+    font-size: 1.05rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .qris .qr {
+    width: 180px;
+    height: 180px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    box-shadow: var(--shadow-soft);
+  }
+  .qris .qr img { width: 100%; height: 100%; object-fit: contain; }
+  .qris small {
+    font-size: .75rem;
+    color: var(--muted);
+    margin-top: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.jpeg" alt="Logo Ma'had">
+      <span>Ma'had At-Tauhid</span>
+    </a>
+    <a href="index.html" class="btn-back">← Kembali</a>
+  </div>
+</header>
+
+<main>
   <div class="container">
     <div class="head">
-      <div class="ornament"><span class="eyebrow" style="color:var(--gold)">Salurkan</span></div>
+      <div class="ornament"><span class="eyebrow">Salurkan</span></div>
       <h2>Wakaf Terbaik Anda</h2>
     </div>
+
     <div class="donate-card">
       <div class="donate-grid">
+        
+        <!-- Sisi Kiri: Rekening & WA -->
         <div>
           <div class="bank">
             <div>
@@ -13,21 +284,47 @@
               <p class="acc">177-00-2684005-5</p>
               <p class="holder">a.n. Yayasan Binaul Ummah At-Tauhid</p>
             </div>
-            <!-- Perbaikan: Nomor yang disalin disesuaikan dengan teks (tanpa strip agar mudah disalin ke m-banking) -->
             <button class="copy-btn" onclick="copyAcc(this,'1770026840055')">Salin</button>
           </div>
           <p class="note">*Klik salin untuk menyimpan nomor rekening otomatis.</p>
-          <a class="wa-btn" target="_blank" rel="noreferrer" href="https://wa.me/6289618328116">Konfirmasi via WhatsApp</a>
+          <a class="wa-btn" target="_blank" rel="noreferrer" href="https://wa.me/6289618328116">
+            Konfirmasi via WhatsApp
+          </a>
         </div>
+
+        <!-- Sisi Kanan: QRIS -->
         <div class="qris">
           <h4>Scan QRIS</h4>
           <div class="qr">
             <img src="qris.jpeg" alt="QRIS Ma'had At-Tauhid">
           </div>
-          <div>
-          <small>GoPay, OVO, Dana, LinkAja &amp; Mobile Banking</small></div>
+          <small>Mendukung GoPay, OVO, Dana, LinkAja &amp; Seluruh Mobile Banking</small>
         </div>
+
       </div>
     </div>
   </div>
-</section>
+</main>
+
+<footer>
+  <p>© 2026 Ma'had At-Tauhid — Semoga menjadi amal jariyah yang terus mengalir.</p>
+</footer>
+
+<script>
+  function copyAcc(btn, num) {
+    navigator.clipboard.writeText(num).then(() => {
+      const originalText = btn.textContent;
+      btn.textContent = 'Tersalin ✓';
+      btn.style.background = 'var(--gold)';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+      }, 1800);
+    }).catch(err => {
+      console.error('Gagal menyalin text: ', err);
+    });
+  }
+</script>
+
+</body>
+</html>
