@@ -168,7 +168,7 @@ src="https://www.facebook.com/tr?id=1924324978244038&ev=PageView&noscript=1"
     margin-bottom: 14px;
   }
   .bank .name {
-    font-size: .75rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -182,22 +182,37 @@ src="https://www.facebook.com/tr?id=1924324978244038&ev=PageView&noscript=1"
     letter-spacing: .02em;
   }
   .bank .holder {
-    font-size: .85rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text);
   }
   .copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+    transition: opacity .2s, transform .2s;
+    text-align: center;
+  }
+  /* .copy-btn {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     color: #fff;
     border: 0;
     font-family: inherit;
-    font-size: .8rem;
+    font-size: .99rem;
     font-weight: 600;
     padding: 10px 18px;
     border-radius: 10px;
     cursor: pointer;
     transition: opacity .2s, transform 0.1s;
-    white-space: nowrap;
+    white-space: nowrap; */
   }
   .copy-btn:hover { opacity: .9; }
   .copy-btn:active { transform: scale(0.97); }
@@ -226,19 +241,19 @@ src="https://www.facebook.com/tr?id=1924324978244038&ev=PageView&noscript=1"
   .wa-btn:hover { opacity: .95; transform: translateY(-2px); }
 
    /* DONATION */
-  .donate-card{background:var(--card);border-radius:24px;padding:28px;box-shadow:var(--shadow-elegant);border:1px solid rgba(236,228,211,.6)}
+  /* .donate-card{background:var(--card);border-radius:24px;padding:28px;box-shadow:var(--shadow-elegant);border:1px solid rgba(236,228,211,.6)}
   @media(min-width:768px){.donate-card{padding:42px}}
   .donate-grid{display:grid;grid-template-columns:1fr;gap:28px}
   @media(min-width:768px){.donate-grid{grid-template-columns:1.3fr 1fr}}
   .bank{background:rgba(243,237,224,.55);border-radius:14px;padding:18px;border-left:4px solid var(--primary);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
   .bank .name{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   .bank .acc{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);margin:4px 0;letter-spacing:.04em}
-  .bank .holder{font-size:.78rem;color:var(--muted)}
-  .copy-btn{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;border:0;font-family:inherit;font-size:.78rem;font-weight:600;padding:9px 16px;border-radius:10px;cursor:pointer;transition:opacity .2s}
-  .copy-btn:hover{opacity:.9}
-  .note{font-size:.78rem;color:var(--muted);font-style:italic;margin:6px 0 14px}
+  .bank .holder{font-size:.78rem;color:var(--muted)} */
+  /* .copy-btn{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;border:0;font-family:inherit;font-size:.99rem;font-weight:600;padding:9px 16px;border-radius:10px;cursor:pointer;transition:opacity .2s}
+  .copy-btn:hover{opacity:.9} */
+  /* .note{font-size:.78rem;color:var(--muted);font-style:italic;margin:6px 0 14px}
   .wa-btn{display:block;text-align:center;background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;font-weight:600;padding:14px;border-radius:12px;box-shadow:var(--shadow-soft);transition:opacity .2s,transform .2s}
-  .wa-btn:hover{opacity:.95;transform:translateY(-2px)}
+  .wa-btn:hover{opacity:.95;transform:translateY(-2px)} */
   .qris{background:rgba(243,237,224,.55);border-radius:14px;padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
   .qris h4{font-size:1.1rem;color:var(--primary);font-weight:600;margin-bottom:12px}
   .qris .qr{width:230px;height:310px;background:#fff;border:1px solid var(--border);border-radius:10px;display:grid;place-items:center;font-size:.75rem;color:var(--muted);padding:12px}
@@ -282,7 +297,7 @@ src="https://www.facebook.com/tr?id=1924324978244038&ev=PageView&noscript=1"
           <div class="bank">
             <div>
               <p class="name">Bank Mandiri</p>
-              <p class="acc">177-00-2684005-5</p>
+              <p class="acc">1770026840055</p>
               <p class="holder">a.n. Yayasan Binaul Ummah At-Tauhid</p>
             </div>
             <button class="copy-btn" onclick="copyAcc(this,'1770026840055')">Salin</button>
